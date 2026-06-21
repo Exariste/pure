@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PURE OIL & SPICE | Premium Edible Oil & Spice Manufacturer in Bangladesh</title>
+<meta name="description" content="PURE OIL & SPICE is a trusted producer of mustard oil, soybean oil, chili powder, turmeric powder, coriander powder and iodized salt in Bangladesh.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0B5D1E;
+  --green-deep:#073D14;
+  --gold:#D4AF37;
+  --mustard:#D9A404;
+  --cream:#FBF7EC;
+  --white:#FFFFFF;
+  --ink:#1A2B1B;
+  --line:rgba(11,93,30,0.15);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Hind Siliguri','Noto Serif Bengali',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{
+  font-family:'Noto Serif Bengali','Cormorant Garamond',serif;
+  font-weight:700;
+  margin:0;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.eyebrow{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  letter-spacing:.06em;
+  color:var(--mustard);
+  font-size:1.05rem;
+  margin-bottom:.6rem;
+  display:inline-block;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+.section{padding:96px 0;position:relative;}
+.section-tight{padding:64px 0;}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(251,247,236,0.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  transition:.3s;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1180px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand img{width:42px;height:42px;border-radius:10px;}
+.brand-text{display:flex;flex-direction:column;line-height:1.05;}
+.brand-text strong{font-family:'Noto Serif Bengali',serif;font-size:1.05rem;color:var(--green-deep);letter-spacing:.02em;}
+.brand-text span{font-size:.62rem;letter-spacing:.12em;color:var(--mustard);text-transform:uppercase;}
+nav.links{display:flex;gap:30px;font-size:.92rem;font-weight:500;}
+nav.links a{position:relative;padding:4px 0;color:var(--green-deep);}
+nav.links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:.25s;}
+nav.links a:hover::after{width:100%;}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:.88rem;font-weight:600;
+  border:1px solid transparent;cursor:pointer;transition:.25s;white-space:nowrap;
+}
+.btn-primary{background:var(--green);color:#fff;}
+.btn-primary:hover{background:var(--green-deep);}
+.btn-gold{background:var(--gold);color:var(--green-deep);}
+.btn-gold:hover{background:var(--mustard);}
+.btn-ghost{border:1px solid var(--green);color:var(--green-deep);background:transparent;}
+.btn-ghost:hover{background:var(--green);color:#fff;}
+.menu-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--green-deep);cursor:pointer;}
+
+@media(max-width:880px){
+  nav.links{display:none;}
+  .nav-cta .btn-ghost{display:none;}
+  .menu-toggle{display:block;}
+}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  position:relative;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(217,164,4,0.16), transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(11,93,30,0.12), transparent 55%),
+    var(--cream);
+  padding-top:90px;
+  overflow:hidden;
+}
+.hero-grain{
+  position:absolute;inset:0;pointer-events:none;opacity:.4;
+  background-image:radial-gradient(rgba(11,93,30,0.06) 1px, transparent 1px);
+  background-size:18px 18px;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;
+  position:relative;z-index:2;
+}
+.hero h1{
+  font-size:clamp(2.6rem,5vw,4.2rem);
+  line-height:1.08;
+  color:var(--green-deep);
+  letter-spacing:-.01em;
+}
+.hero h1 em{font-style:italic;color:var(--mustard);}
+.hero-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.5rem;color:var(--green);
+  margin-top:14px;
+  border-left:3px solid var(--gold);padding-left:14px;
+}
+.hero-desc{margin-top:26px;font-size:1.05rem;line-height:1.8;color:#33442f;max-width:520px;}
+.hero-ctas{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap;}
+.hero-visual{
+  position:relative;display:flex;justify-content:center;align-items:center;
+}
+.hero-visual .ring{
+  position:absolute;width:430px;height:430px;border:1px solid var(--line);border-radius:50%;
+  animation:spin 60s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+.hero-visual img{
+  width:340px;filter:drop-shadow(0 30px 50px rgba(11,93,30,0.25));
+  animation:float 6s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);}}
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{order:-1;}
+  .hero-visual img{width:220px;}
+  .hero-visual .ring{width:280px;height:280px;}
+}
+
+/* scroll cue */
+.scroll-cue{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-size:.7rem;letter-spacing:.18em;color:var(--green);text-transform:uppercase;
+}
+.scroll-cue .line{width:1px;height:34px;background:linear-gradient(var(--green),transparent);animation:dropline 2s infinite;}
+@keyframes dropline{0%{opacity:0;}50%{opacity:1;}100%{opacity:0;}}
+
+/* ---------- intro / about strip ---------- */
+.intro{
+  background:var(--green-deep);color:#f4f1e4;
+  padding:80px 0;
+  position:relative;
+}
+.intro .wrap{display:grid;grid-template-columns:.5fr 1fr;gap:60px;align-items:start;}
+.intro h2{font-size:1.9rem;color:#fff;}
+.intro p{font-size:1.05rem;line-height:1.9;color:#d8d8c6;margin-top:18px;}
+.intro .num{font-family:'Cormorant Garamond',serif;font-size:3.4rem;color:var(--gold);line-height:1;}
+@media(max-width:880px){.intro .wrap{grid-template-columns:1fr;gap:24px;}}
+
+/* ---------- section heading ---------- */
+.head{max-width:640px;margin-bottom:48px;}
+.head h2{font-size:clamp(1.9rem,3vw,2.6rem);color:var(--green-deep);}
+.head p{margin-top:14px;font-size:1.02rem;color:#4a584a;line-height:1.7;}
+.head.center{margin:0 auto 56px;text-align:center;}
+
+/* ---------- products ---------- */
+.cat-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:46px;flex-wrap:wrap;}
+.cat-tab{
+  padding:10px 22px;border-radius:999px;border:1px solid var(--line);
+  font-size:.88rem;font-weight:600;color:var(--green-deep);cursor:pointer;background:#fff;
+  transition:.25s;
+}
+.cat-tab.active,.cat-tab:hover{background:var(--green);color:#fff;border-color:var(--green);}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.pcard{
+  background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  transition:.3s;position:relative;
+}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(11,93,30,0.14);}
+.pcard .swatch{
+  height:150px;display:flex;align-items:center;justify-content:center;
+  font-size:2.6rem;
+}
+.pcard.oil .swatch{background:linear-gradient(135deg,#FBE89A,#D9A404);}
+.pcard.spice .swatch{background:linear-gradient(135deg,#F4B860,#B23A1E);color:#fff;}
+.pcard.salt .swatch{background:linear-gradient(135deg,#EDEAE0,#cfd6c8);}
+.pcard-body{padding:22px 22px 26px;}
+.pcard-body .tag{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mustard);font-weight:700;}
+.pcard-body h3{font-size:1.2rem;margin-top:6px;color:var(--green-deep);}
+.pcard-body ul{list-style:none;padding:0;margin:14px 0 0;font-size:.86rem;color:#54624f;line-height:1.6;}
+.pcard-body ul li{padding-left:16px;position:relative;}
+.pcard-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+.pcard-actions{display:flex;gap:8px;margin-top:18px;}
+.pcard-actions a{font-size:.78rem;font-weight:600;padding:8px 14px;border-radius:999px;}
+@media(max-width:880px){.product-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.product-grid{grid-template-columns:1fr;}}
+
+/* ---------- why choose ---------- */
+.why{background:#fff;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+.why-item{background:#fff;padding:38px 30px;}
+.why-item .ic{font-size:1.6rem;color:var(--green);}
+.why-item h3{font-size:1.08rem;margin-top:16px;color:var(--green-deep);}
+.why-item p{margin-top:8px;font-size:.92rem;color:#5a685a;line-height:1.7;}
+@media(max-width:880px){.why-grid{grid-template-columns:1fr;}}
+
+/* ---------- process timeline ---------- */
+.process{background:var(--cream);}
+.timeline{display:flex;flex-direction:column;border-left:2px solid var(--line);margin-left:14px;}
+.t-item{position:relative;padding:0 0 46px 38px;}
+.t-item:last-child{padding-bottom:0;}
+.t-item::before{
+  content:attr(data-n);
+  position:absolute;left:-15px;top:0;width:28px;height:28px;border-radius:50%;
+  background:var(--gold);color:var(--green-deep);font-size:.78rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.t-item h3{font-size:1.1rem;color:var(--green-deep);}
+.t-item p{margin-top:6px;color:#54624f;font-size:.92rem;line-height:1.7;}
+
+/* ---------- quality / cert ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.split-list{list-style:none;padding:0;margin:20px 0 0;}
+.split-list li{
+  padding:14px 0;border-bottom:1px solid var(--line);font-size:1rem;color:#33442f;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.split-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.cert-card{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center;
+}
+.cert-card .ic{font-size:1.8rem;}
+.cert-card p{margin-top:10px;font-size:.86rem;font-weight:600;color:var(--green-deep);}
+.cert-card span{font-size:.72rem;color:var(--mustard);}
+@media(max-width:880px){.split{grid-template-columns:1fr;gap:30px;}}
+
+/* ---------- gallery ---------- */
+.gal-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:36px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.g-item{
+  aspect-ratio:1/1;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  font-size:2rem;color:#fff;position:relative;overflow:hidden;cursor:default;
+}
+.g-item span.label{
+  position:absolute;bottom:10px;left:12px;font-size:.78rem;font-weight:600;color:#fff;z-index:2;
+}
+.g-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45),transparent 55%);}
+.g1{background:linear-gradient(135deg,#0B5D1E,#1c8a35);}
+.g2{background:linear-gradient(135deg,#D9A404,#f3c43b);}
+.g3{background:linear-gradient(135deg,#B23A1E,#e0602f);}
+.g4{background:linear-gradient(135deg,#7a5c1e,#bb9436);}
+.g5{background:linear-gradient(135deg,#3c6e2e,#73a350);}
+.g6{background:linear-gradient(135deg,#cfd6c8,#a9b39c);}
+.g7{background:linear-gradient(135deg,#0B5D1E,#073D14);}
+.g8{background:linear-gradient(135deg,#D4AF37,#9c7d22);}
+@media(max-width:880px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ---------- dealer ---------- */
+.dealer{background:var(--green-deep);color:#f4f1e4;position:relative;overflow:hidden;}
+.dealer::before{
+  content:'';position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,164,4,0.18),transparent 70%);
+}
+.dealer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;position:relative;z-index:2;}
+.dealer h2{color:#fff;font-size:2.1rem;}
+.dealer .head p{color:#d8d8c6;}
+.dealer-list{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px;}
+.dealer-list li{display:flex;gap:12px;font-size:.96rem;color:#e6e6d8;}
+.dealer-list li::before{content:'◆';color:var(--gold);font-size:.7rem;margin-top:5px;}
+.form-card{background:#fff;border-radius:18px;padding:34px;color:var(--ink);}
+.form-card h3{color:var(--green-deep);font-size:1.2rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+.form-row.full{grid-template-columns:1fr;}
+.form-card input,.form-card textarea{
+  width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);
+  font-family:inherit;font-size:.92rem;background:var(--cream);
+}
+.form-card textarea{resize:vertical;min-height:90px;}
+.form-card button{margin-top:20px;width:100%;justify-content:center;}
+@media(max-width:880px){.dealer .wrap{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
+
+/* ---------- faq ---------- */
+.faq{max-width:760px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;padding:22px 0;
+  font-size:1.05rem;font-weight:600;color:var(--green-deep);cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;font-family:inherit;
+}
+.faq-q .plus{font-size:1.4rem;color:var(--gold);transition:.3s;flex-shrink:0;}
+.faq-item.open .plus{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:.3s;color:#54624f;font-size:.95rem;line-height:1.7;}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:22px;}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;}
+.contact-info{display:flex;flex-direction:column;gap:18px;}
+.contact-info .ci{
+  display:flex;gap:14px;align-items:flex-start;padding:18px;background:#fff;border:1px solid var(--line);border-radius:14px;
+}
+.contact-info .ci .ic{font-size:1.3rem;color:var(--green);}
+.contact-info .ci strong{display:block;color:var(--green-deep);font-size:.95rem;}
+.contact-info .ci span{font-size:.86rem;color:#5a685a;}
+.map-box{
+  margin-top:6px;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+  height:160px;background:linear-gradient(135deg,#e7e3d2,#cfd6c8);
+  display:flex;align-items:center;justify-content:center;color:#5a685a;font-size:.85rem;
+}
+.contact-form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px;}
+.contact-form .form-row{margin-top:0;}
+.contact-form input,.contact-form textarea{
+  width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);
+  font-family:inherit;font-size:.92rem;background:var(--cream);margin-bottom:14px;
+}
+.contact-form textarea{min-height:120px;resize:vertical;}
+@media(max-width:880px){.contact-grid{grid-template-columns:1fr;}}
+
+/* ---------- footer ---------- */
+footer{background:var(--green-deep);color:#cfd6c8;padding:60px 0 0;}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.08);}
+.foot-brand{display:flex;gap:12px;align-items:center;}
+.foot-brand img{width:40px;border-radius:8px;}
+.foot-brand strong{color:#fff;font-family:'Noto Serif Bengali',serif;font-size:1.05rem;}
+footer p.tag{margin-top:14px;font-size:.88rem;color:#9aa896;line-height:1.7;max-width:280px;}
+footer h4{color:#fff;font-size:.92rem;letter-spacing:.05em;margin-bottom:16px;}
+footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:.88rem;}
+footer ul a:hover{color:var(--gold);}
+.foot-bottom{display:flex;justify-content:space-between;padding:24px 0;font-size:.8rem;color:#8a9a86;flex-wrap:wrap;gap:10px;}
+@media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;}}
+
+/* whatsapp float */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:999;
+  width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+  box-shadow:0 14px 30px rgba(0,0,0,.25);
+  animation:pulse 2.4s infinite;
+}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5);}70%{box-shadow:0 0 0 14px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+/* mobile nav drawer */
+.mobile-nav{
+  position:fixed;inset:0;background:var(--green-deep);z-index:1100;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  transform:translateY(-100%);transition:.35s;
+}
+.mobile-nav.open{transform:translateY(0);}
+.mobile-nav a{color:#fff;font-size:1.4rem;font-family:'Noto Serif Bengali',serif;}
+.mobile-nav .close{position:absolute;top:24px;right:28px;font-size:1.8rem;color:#fff;cursor:pointer;background:none;border:none;}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#home">
+      <img src="assets/logo.png" alt="PURE OIL & SPICE logo">
+      <div class="brand-text">
+        <strong>PURE OIL & SPICE</strong>
+        <span>From Nature's Heart</span>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="#about">আমাদের কথা</a>
+      <a href="#products">পণ্য</a>
+      <a href="#process">উৎপাদন</a>
+      <a href="#quality">মান</a>
+      <a href="#gallery">গ্যালারি</a>
+      <a href="#dealer">ডিলারশিপ</a>
+      <a href="#contact">যোগাযোগ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#contact">Contact Us</a>
+      <a class="btn btn-primary" href="#dealer">Become a Dealer</a>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="close" id="menuClose">×</button>
+  <a href="#about">আমাদের কথা</a>
+  <a href="#products">পণ্য</a>
+  <a href="#process">উৎপাদন</a>
+  <a href="#quality">মান</a>
+  <a href="#gallery">গ্যালারি</a>
+  <a href="#dealer">ডিলারশিপ</a>
+  <a href="#contact">যোগাযোগ</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grain"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">বিশুদ্ধতার প্রতিশ্রুতি, প্রতিটি বোতলে</span>
+      <h1>প্রকৃতির হৃদয় থেকে<br><em>আপনার রান্নাঘরে</em></h1>
+      <p class="hero-sub">From Nature's Heart to Your Kitchen</p>
+      <p class="hero-desc">PURE OIL & SPICE বাংলাদেশের একটি উদীয়মান ভোজ্য তেল ও মসলা উৎপাদনকারী প্রতিষ্ঠান। আমরা বিশুদ্ধ, নিরাপদ ও স্বাস্থ্যসম্মত খাদ্যপণ্য উৎপাদনের মাধ্যমে ভোক্তাদের আস্থা অর্জনে প্রতিশ্রুতিবদ্ধ।</p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn btn-primary">View Products</a>
+        <a href="#dealer" class="btn btn-gold">Become a Dealer</a>
+        <a href="https://wa.me/8801713366224" class="btn btn-ghost">Contact Us</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="ring"></div>
+      <img src="assets/logo.png" alt="PURE OIL & SPICE">
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
+</section>
+
+<!-- INTRO STRIP -->
+<section class="intro">
+  <div class="wrap">
+    <div>
+      <span class="num">০১</span>
+      <h2 style="margin-top:10px;">কোম্পানি পরিচিতি</h2>
+    </div>
+    <p>আমরা বিশ্বাস করি বিশুদ্ধ খাদ্যই সুস্থ জীবনের ভিত্তি। আধুনিক প্রযুক্তি ও স্বাস্থ্যসম্মত পরিবেশে আমরা ভোজ্য তেল ও মসলা উৎপাদন করি, এবং প্রতিটি ধাপে মান নিয়ন্ত্রণ নিশ্চিত করে বাংলাদেশের মানুষের ঘরে ঘরে বিশুদ্ধতা পৌঁছে দেওয়ার লক্ষ্যে কাজ করছি — দানা থেকে বোতল পর্যন্ত প্রতিটি পর্যায়ে যত্ন আমাদের অগ্রাধিকার।</p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">আমাদের কথা</span>
+        <h2 style="font-size:2.1rem;color:var(--green-deep);">লক্ষ্য, ভিশন ও প্রতিশ্রুতি</h2>
+        <ul class="split-list">
+          <li><strong>লক্ষ্য —</strong>&nbsp;বিশুদ্ধ, নিরাপদ ও স্বাস্থ্যসম্মত খাদ্যপণ্য মানুষের কাছে পৌঁছে দেওয়া।</li>
+          <li><strong>ভিশন —</strong>&nbsp;বাংলাদেশের অন্যতম বিশ্বস্ত ভোজ্য তেল ও মসলা ব্র্যান্ড হওয়া।</li>
+          <li><strong>প্রতিষ্ঠাতার বার্তা —</strong>&nbsp;সর্বোচ্চ মান বজায় রেখে ভোজ্য তেল ও মসলা উৎপাদন ও বাজারজাত করতে আমরা প্রতিশ্রুতিবদ্ধ।</li>
+        </ul>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card"><div class="ic">🌿</div><p>বিশুদ্ধ কাঁচামাল</p><span>Pure Ingredients</span></div>
+        <div class="cert-card"><div class="ic">🏭</div><p>আধুনিক উৎপাদন</p><span>Modern Process</span></div>
+        <div class="cert-card"><div class="ic">🔬</div><p>মান যাচাই</p><span>Quality Tested</span></div>
+        <div class="cert-card"><div class="ic">📦</div><p>নিরাপদ প্যাকেজিং</p><span>Safe Packaging</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products" style="background:#fff;">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">আমাদের পণ্য</span>
+      <h2>Featured Products</h2>
+      <p>ভোজ্য তেল, মসলা ও লবণ — প্রতিটি পণ্য তৈরি বিশুদ্ধতা ও স্বাস্থ্যের কথা মাথায় রেখে।</p>
+    </div>
+
+    <div class="product-grid">
+      <div class="pcard oil">
+        <div class="swatch">🫙</div>
+        <div class="pcard-body">
+          <span class="tag">Edible Oil</span>
+          <h3>Pure Mustard Oil</h3>
+          <ul><li>250ml · 500ml · 1L · 2L · 5L</li><li>ছবি, উপাদান, পুষ্টিগুণ ও সংরক্ষণ নির্দেশনা সহ</li></ul>
+          <div class="pcard-actions">
+            <a href="#dealer" class="btn-gold" style="display:inline-block;">Request Quotation</a>
+            <a href="https://wa.me/8801713366224" class="btn-ghost" style="display:inline-block;border:1px solid var(--green);">WhatsApp Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard oil">
+        <div class="swatch">🫙</div>
+        <div class="pcard-body">
+          <span class="tag">Edible Oil</span>
+          <h3>Soybean Oil</h3>
+          <ul><li>1L · 2L · 5L</li><li>ছবি, উপাদান, পুষ্টিগুণ ও সংরক্ষণ নির্দেশনা সহ</li></ul>
+          <div class="pcard-actions">
+            <a href="#dealer" class="btn-gold" style="display:inline-block;">Request Quotation</a>
+            <a href="https://wa.me/8801713366224" class="btn-ghost" style="display:inline-block;border:1px solid var(--green);">WhatsApp Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard spice">
+        <div class="swatch">🌶️</div>
+        <div class="pcard-body">
+          <span class="tag">Spice</span>
+          <h3>Chili Powder</h3>
+          <ul><li>ছবি, উপাদান, পুষ্টিগুণ ও সংরক্ষণ নির্দেশনা সহ</li></ul>
+          <div class="pcard-actions">
+            <a href="#dealer" class="btn-gold" style="display:inline-block;">Request Quotation</a>
+            <a href="https://wa.me/8801713366224" class="btn-ghost" style="display:inline-block;border:1px solid var(--green);">WhatsApp Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard spice">
+        <div class="swatch">🟡</div>
+        <div class="pcard-body">
+          <span class="tag">Spice</span>
+          <h3>Turmeric Powder</h3>
+          <ul><li>ছবি, উপাদান, পুষ্টিগুণ ও সংরক্ষণ নির্দেশনা সহ</li></ul>
+          <div class="pcard-actions">
+            <a href="#dealer" class="btn-gold" style="display:inline-block;">Request Quotation</a>
+            <a href="https://wa.me/8801713366224" class="btn-ghost" style="display:inline-block;border:1px solid var(--green);">WhatsApp Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard spice">
+        <div class="swatch">🌱</div>
+        <div class="pcard-body">
+          <span class="tag">Spice</span>
+          <h3>Coriander Powder</h3>
+          <ul><li>ছবি, উপাদান, পুষ্টিগুণ ও সংরক্ষণ নির্দেশনা সহ</li></ul>
+          <div class="pcard-actions">
+            <a href="#dealer" class="btn-gold" style="display:inline-block;">Request Quotation</a>
+            <a href="https://wa.me/8801713366224" class="btn-ghost" style="display:inline-block;border:1px solid var(--green);">WhatsApp Order</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard salt">
+        <div class="swatch">🧂</div>
+        <div class="pcard-body">
+          <span class="tag">Salt</span>
+          <h3>Iodized Salt</h3>
+          <ul><li>ছবি, উপাদান, পুষ্টিগুণ ও সংরক্ষণ নির্দেশনা সহ</li></ul>
+          <div class="pcard-actions">
+            <a href="#dealer" class="btn-gold" style="display:inline-block;">Request Quotation</a>
+            <a href="https://wa.me/8801713366224" class="btn-ghost" style="display:inline-block;border:1px solid var(--green);">WhatsApp Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:46px;">
+      <a href="#" class="btn btn-primary">📄 Download Product Catalogue (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="section why">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">কেন আমরা</span>
+      <h2>Why Choose Us</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><div class="ic">🌾</div><h3>100% Pure Ingredients</h3><p>বিশুদ্ধ কাঁচামাল নির্বাচন থেকেই আমাদের গুণগত মানের যাত্রা শুরু।</p></div>
+      <div class="why-item"><div class="ic">🧼</div><h3>Hygienic Manufacturing</h3><p>স্বাস্থ্যসম্মত পরিবেশে আধুনিক প্রযুক্তিতে উৎপাদন করা হয়।</p></div>
+      <div class="why-item"><div class="ic">🧪</div><h3>Quality Tested Products</h3><p>প্রতিটি ব্যাচ মান নিয়ন্ত্রণ পরীক্ষার মধ্য দিয়ে যায়।</p></div>
+      <div class="why-item"><div class="ic">📦</div><h3>Safe Packaging</h3><p>নিরাপদ ও দীর্ঘস্থায়ী প্যাকেজিং ভোক্তার আস্থা রক্ষা করে।</p></div>
+      <div class="why-item"><div class="ic">🤝</div><h3>Customer Satisfaction</h3><p>ভোক্তা সন্তুষ্টি আমাদের কাছে সর্বোচ্চ অগ্রাধিকার।</p></div>
+      <div class="why-item"><div class="ic">🚚</div><h3>Reliable Supply Chain</h3><p>নিরবচ্ছিন্ন সরবরাহ ব্যবস্থায় পণ্য পৌঁছে দেওয়া হয় সময়মতো।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process" id="process">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">উৎপাদন প্রক্রিয়া</span>
+      <h2>Manufacturing Process</h2>
+      <p>আমরা আধুনিক প্রযুক্তি ও স্বাস্থ্যসম্মত পরিবেশে খাদ্যপণ্য উৎপাদন করি এবং প্রতিটি ধাপে মান নিয়ন্ত্রণ নিশ্চিত করি।</p>
+    </div>
+    <div class="timeline">
+      <div class="t-item" data-n="1"><h3>কাঁচামাল সংগ্রহ</h3><p>বিশুদ্ধ ও নির্বাচিত উৎস থেকে কাঁচামাল সংগ্রহ করা হয়।</p></div>
+      <div class="t-item" data-n="2"><h3>মান যাচাই</h3><p>প্রতিটি ব্যাচের কাঁচামাল প্রাথমিক মান পরীক্ষার মধ্য দিয়ে যায়।</p></div>
+      <div class="t-item" data-n="3"><h3>প্রক্রিয়াজাতকরণ</h3><p>আধুনিক যন্ত্রপাতিতে স্বাস্থ্যসম্মতভাবে প্রক্রিয়াজাত করা হয়।</p></div>
+      <div class="t-item" data-n="4"><h3>প্যাকেজিং</h3><p>নিরাপদ ও মানসম্পন্ন প্যাকেজিংয়ে পণ্য সংরক্ষণ করা হয়।</p></div>
+      <div class="t-item" data-n="5"><h3>গুণগত পরীক্ষা</h3><p>বাজারজাতকরণের আগে চূড়ান্ত গুণগত মান যাচাই করা হয়।</p></div>
+      <div class="t-item" data-n="6"><h3>বাজারজাতকরণ</h3><p>অনুমোদিত ডিলার নেটওয়ার্কের মাধ্যমে বাজারে পৌঁছে দেওয়া হয়।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALITY -->
+<section class="section" id="quality" style="background:#fff;">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">গুণগত মান</span>
+        <h2 style="font-size:2.1rem;color:var(--green-deep);">Quality Assurance</h2>
+        <ul class="split-list">
+          <li>বিশুদ্ধ কাঁচামাল নির্বাচন</li>
+          <li>স্বাস্থ্যসম্মত উৎপাদন</li>
+          <li>নিয়মিত মান নিয়ন্ত্রণ</li>
+          <li>নিরাপদ প্যাকেজিং</li>
+          <li>ভোক্তা সন্তুষ্টি নিশ্চিতকরণ</li>
+        </ul>
+      </div>
+      <div>
+        <span class="eyebrow">সনদপত্র ও প্রতিপালন</span>
+        <h2 style="font-size:2.1rem;color:var(--green-deep);">Certification & Compliance</h2>
+        <p style="margin-top:10px;color:#5a685a;font-size:.92rem;">বর্তমানে প্রযোজ্য সনদপত্র যুক্ত করা হবে।</p>
+        <div class="cert-grid" style="margin-top:18px;">
+          <div class="cert-card"><div class="ic">🛡️</div><p>BSTI</p><span>Certification</span></div>
+          <div class="cert-card"><div class="ic">📜</div><p>Trade License</p><span>Compliance</span></div>
+          <div class="cert-card"><div class="ic">🍃</div><p>Food Safety</p><span>Compliance</span></div>
+          <div class="cert-card"><div class="ic">☪️</div><p>Halal</p><span>Certification</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">গ্যালারি</span>
+      <h2>Factory, Product & Packaging Gallery</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item g1"><span class="label">সরিষার তেল</span></div>
+      <div class="g-item g2"><span class="label">সয়াবিন তেল</span></div>
+      <div class="g-item g3"><span class="label">মরিচ গুঁড়া</span></div>
+      <div class="g-item g4"><span class="label">হলুদ গুঁড়া</span></div>
+      <div class="g-item g5"><span class="label">ধনিয়া গুঁড়া</span></div>
+      <div class="g-item g6"><span class="label">আয়োডিনযুক্ত লবণ</span></div>
+      <div class="g-item g7"><span class="label">কারখানা</span></div>
+      <div class="g-item g8"><span class="label">প্যাকেজিং</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEALER -->
+<section class="section dealer" id="dealer">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">ব্যবসায়িক সুযোগ</span>
+      <h2>কেন PURE OIL & SPICE-এর ডিলার হবেন?</h2>
+      <ul class="dealer-list">
+        <li>Competitive Pricing — প্রতিযোগিতামূলক মূল্য</li>
+        <li>Marketing Support — মার্কেটিং সহায়তা</li>
+        <li>Reliable Supply Chain — নিরবচ্ছিন্ন সরবরাহ</li>
+        <li>Quality Products — গুণগত মানের পণ্য</li>
+        <li>Business Growth Opportunity — ব্যবসায়িক প্রবৃদ্ধির সুযোগ</li>
+      </ul>
+    </div>
+    <div class="form-card">
+      <h3>Dealer Registration Form</h3>
+      <form onsubmit="event.preventDefault(); alert('ধন্যবাদ! আমরা শীঘ্রই যোগাযোগ করব।');">
+        <div class="form-row">
+          <input type="text" placeholder="নাম" required>
+          <input type="text" placeholder="প্রতিষ্ঠানের নাম">
+        </div>
+        <div class="form-row full"><input type="text" placeholder="ঠিকানা" required></div>
+        <div class="form-row">
+          <input type="tel" placeholder="মোবাইল নম্বর" required>
+          <input type="text" placeholder="জেলা">
+        </div>
+        <div class="form-row full"><textarea placeholder="বার্তা"></textarea></div>
+        <button class="btn btn-gold" type="submit">আবেদন পাঠান</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:#fff;">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">প্রশ্নোত্তর</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq" id="faq">
+      <div class="faq-item">
+        <button class="faq-q">সরিষার তেল কি বিশুদ্ধ? <span class="plus">+</span></button>
+        <div class="faq-a">হ্যাঁ, আমাদের সরিষার তেল মানসম্মত কাঁচামাল থেকে উৎপাদিত।</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">পণ্য কোথায় পাওয়া যাবে? <span class="plus">+</span></button>
+        <div class="faq-a">অনুমোদিত ডিলার ও পরিবেশকের মাধ্যমে।</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">ডিলারশিপ কিভাবে নেওয়া যায়? <span class="plus">+</span></button>
+        <div class="faq-a">Dealer Registration Form পূরণ করে আবেদন করা যাবে।</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">অনলাইন অর্ডার করা যাবে? <span class="plus">+</span></button>
+        <div class="faq-a">ভবিষ্যতে অনলাইন অর্ডার সুবিধা যুক্ত করা হবে।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">যোগাযোগ</span>
+      <h2>Contact Us</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="ci"><div class="ic">📧</div><div><strong>ইমেইল</strong><span>info@exariste.com</span></div></div>
+        <div class="ci"><div class="ic">🌐</div><div><strong>ওয়েবসাইট</strong><span>pure.exariste.com</span></div></div>
+        <div class="ci"><div class="ic">📞</div><div><strong>মোবাইল</strong><span>01713366224</span></div></div>
+        <div class="ci"><div class="ic">💬</div><div><strong>WhatsApp</strong><span>01713366224</span></div></div>
+        <div class="map-box">Google Maps Embed — কারখানার ও অফিসের অবস্থান</div>
+      </div>
+      <div class="contact-form">
+        <form onsubmit="event.preventDefault(); alert('ধন্যবাদ! আমরা শীঘ্রই যোগাযোগ করব।');">
+          <input type="text" placeholder="নাম" required>
+          <input type="tel" placeholder="মোবাইল নম্বর" required>
+          <input type="email" placeholder="ইমেইল">
+          <textarea placeholder="বার্তা" required></textarea>
+          <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">বার্তা পাঠান</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="assets/logo.png" alt="logo"><strong>PURE OIL & SPICE</strong></div>
+        <p class="tag">"From Nature's Heart to Your Kitchen" — বিশুদ্ধতা, গুণগত মান ও আস্থার প্রতীক।</p>
+      </div>
+      <div>
+        <h4>পেজসমূহ</h4>
+        <ul>
+          <li><a href="#about">আমাদের কথা</a></li>
+          <li><a href="#products">পণ্য</a></li>
+          <li><a href="#process">উৎপাদন</a></li>
+          <li><a href="#quality">মান নিশ্চিতকরণ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>আরও</h4>
+        <ul>
+          <li><a href="#gallery">গ্যালারি</a></li>
+          <li><a href="#dealer">ডিলারশিপ</a></li>
+          <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li>info@exariste.com</li>
+          <li>01713366224</li>
+          <li>pure.exariste.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 PURE OIL & SPICE. সর্বস্বত্ব সংরক্ষিত।</span>
+      <span>Made with care in Bangladesh 🇧🇩</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8801713366224" class="wa-float" title="Order via WhatsApp">💬</a>
+
+<script>
+// mobile nav
+const menuToggle=document.getElementById('menuToggle');
+const mobileNav=document.getElementById('mobileNav');
+const menuClose=document.getElementById('menuClose');
+menuToggle.addEventListener('click',()=>mobileNav.classList.add('open'));
+menuClose.addEventListener('click',()=>mobileNav.classList.remove('open'));
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileNav.classList.remove('open')));
+
+// faq accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
