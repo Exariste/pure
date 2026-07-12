@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PURE OIL &amp; SPICE — From Nature's Heart to Your Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#052821;
+    --forest:#0B3D2E;
+    --forest-light:#14543F;
+    --forest-mist: rgba(11,61,46,0.55);
+    --gold:#C9A227;
+    --gold-soft:#E8C766;
+    --gold-dim: rgba(201,162,39,0.35);
+    --cream:#FBF7EE;
+    --paper:#F4F0E4;
+    --turmeric:#E08A1E;
+    --chili:#C1272D;
+    --coriander:#6E7F3D;
+    --ink:#17241D;
+    --ink-soft: rgba(23,36,29,0.68);
+    --line: rgba(11,61,46,0.14);
+    --radius: 18px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Manrope', sans-serif;
+    color:var(--ink);
+    overflow-x:hidden;
+    background:
+      radial-gradient(ellipse 780px 600px at 6% 8%, rgba(224,138,30,.16), transparent 60%),
+      radial-gradient(ellipse 700px 680px at 96% 18%, rgba(193,39,45,.13), transparent 55%),
+      radial-gradient(ellipse 820px 700px at 10% 62%, rgba(110,127,61,.15), transparent 55%),
+      radial-gradient(ellipse 760px 720px at 100% 78%, rgba(201,162,39,.20), transparent 55%),
+      radial-gradient(ellipse 700px 600px at 40% 98%, rgba(11,61,46,.10), transparent 55%),
+      linear-gradient(180deg, #FBF6E9, #F3ECD9 45%, #FBF6E9);
+    background-attachment:fixed;
+    background-color:var(--cream);
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--forest-deep);
+    letter-spacing:-0.01em;
+  }
+  a{ text-decoration:none; color:inherit; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1220px; margin:0 auto; padding:0 32px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Manrope', sans-serif; font-weight:700; font-size:12.5px;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--gold);
+    margin-bottom:16px;
+  }
+  .eyebrow::before{
+    content:""; width:7px; height:7px; border-radius:50%;
+    background:var(--gold); box-shadow:0 0 0 4px var(--gold-dim);
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:15px 28px; border-radius:999px; font-weight:700; font-size:14.5px;
+    letter-spacing:.02em; cursor:pointer; border:1px solid transparent;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, background .3s ease, color .3s ease;
+  }
+  .btn-gold{ background:linear-gradient(135deg,var(--gold-soft),var(--gold)); color:var(--forest-deep); }
+  .btn-gold:hover{ transform:translateY(-3px); box-shadow:0 14px 30px -10px rgba(201,162,39,.6); }
+  .btn-outline{ background:transparent; border-color:rgba(251,247,238,.4); color:var(--cream); }
+  .btn-outline:hover{ background:rgba(251,247,238,.12); transform:translateY(-3px); }
+  .btn-outline-dark{ background:transparent; border-color:var(--forest); color:var(--forest-deep); }
+  .btn-outline-dark:hover{ background:var(--forest-deep); color:var(--cream); transform:translateY(-3px); }
+
+  /* Scroll progress drip */
+  #drip-progress{
+    position:fixed; top:0; left:0; width:4px; height:100vh; z-index:999;
+    background:rgba(11,61,46,.08);
+  }
+  #drip-progress span{
+    display:block; width:100%; height:0%;
+    background:linear-gradient(180deg, var(--gold-soft), var(--gold));
+    box-shadow:0 0 12px 2px rgba(201,162,39,.5);
+    transition:height .1s linear;
+  }
+
+  /* NAV */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:500;
+    padding:18px 0; transition:all .4s ease;
+  }
+  header.scrolled{
+    background:rgba(5,40,33,.72);
+    backdrop-filter:blur(18px) saturate(140%);
+    -webkit-backdrop-filter:blur(18px) saturate(140%);
+    border-bottom:1px solid rgba(232,199,102,.18);
+    padding:12px 0;
+  }
+  nav{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ width:42px; height:42px; border-radius:10px; }
+  .brand-text{ line-height:1.05; }
+  .brand-text b{ font-family:'Fraunces',serif; font-size:19px; color:var(--cream); letter-spacing:.02em; display:block; }
+  .brand-text small{ font-size:9px; letter-spacing:.08em; color:var(--gold-soft); text-transform:uppercase; white-space:nowrap; }
+  .nav-links{ display:flex; gap:34px; list-style:none; }
+  .nav-links a{
+    font-size:13.5px; font-weight:600; color:rgba(251,247,238,.82);
+    letter-spacing:.03em; position:relative; padding:4px 0;
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-2px; width:0; height:1.5px;
+    background:var(--gold-soft); transition:width .3s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-cta{ display:flex; align-items:center; gap:16px; }
+  .menu-btn{ display:none; background:none; border:none; color:var(--cream); font-size:26px; cursor:pointer; }
+
+  /* HERO */
+  .hero{
+    position:relative; min-height:100vh; display:flex; align-items:center;
+    background:radial-gradient(120% 100% at 15% 0%, #0d4a37 0%, var(--forest-deep) 55%, #041d17 100%);
+    overflow:hidden; padding:150px 0 100px;
+  }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle at 85% 20%, rgba(201,162,39,.18), transparent 45%),
+      radial-gradient(circle at 10% 85%, rgba(20,84,63,.55), transparent 55%);
+    pointer-events:none;
+  }
+  .hero-grain{
+    position:absolute; inset:0; opacity:.05; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .hero-inner{
+    position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr;
+    gap:64px; align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(38px,5vw,64px); color:var(--cream); line-height:1.06; font-weight:500;
+    margin-bottom:22px;
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold-soft); font-weight:500; }
+  .hero p.lead{
+    font-size:17.5px; color:rgba(251,247,238,.72); max-width:480px; line-height:1.7; margin-bottom:36px;
+  }
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:48px; }
+  .hero-stats{ display:flex; gap:38px; flex-wrap:wrap; }
+  .hero-stats div b{ display:block; font-family:'Fraunces',serif; font-size:26px; color:var(--gold-soft); }
+  .hero-stats div span{ font-size:12px; color:rgba(251,247,238,.6); letter-spacing:.06em; text-transform:uppercase; }
+
+  .hero-art{ position:relative; }
+  .hero-art .glass-frame{
+    position:relative; border-radius:28px; overflow:hidden;
+    border:1px solid rgba(232,199,102,.25);
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.65), inset 0 0 0 1px rgba(255,255,255,.03);
+  }
+  .hero-art img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .float-card{
+    position:absolute; padding:16px 20px; border-radius:16px;
+    background:rgba(251,247,238,.1); backdrop-filter:blur(16px);
+    border:1px solid rgba(251,247,238,.22);
+    display:flex; align-items:center; gap:12px;
+    box-shadow:0 20px 40px -14px rgba(0,0,0,.5);
+    animation:float 6s ease-in-out infinite;
+  }
+  .float-card.c1{ top:-26px; left:-30px; animation-delay:0s; }
+  .float-card.c2{ bottom:-24px; right:-24px; animation-delay:1.4s; }
+  .float-card .dot{ width:38px;height:38px;border-radius:50%; background:linear-gradient(135deg,var(--gold-soft),var(--gold)); display:flex;align-items:center;justify-content:center; font-size:17px;}
+  .float-card b{ color:var(--cream); font-size:13.5px; display:block; font-family:'Manrope';}
+  .float-card span{ color:rgba(251,247,238,.6); font-size:11px; }
+  @keyframes float{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+
+  /* SECTION generic */
+  section{ padding:120px 0; position:relative; }
+  .section-head{ max-width:640px; margin-bottom:64px; }
+  .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+  .section-head h2{ font-size:clamp(30px,3.6vw,44px); line-height:1.15; font-weight:500;}
+  .section-head p{ color:var(--ink-soft); font-size:16px; line-height:1.75; margin-top:16px; }
+  .dark{ background:var(--forest-deep); color:var(--cream); }
+  .dark h2, .dark h3, .dark h4{ color:var(--cream); }
+  .dark .section-head p{ color:rgba(251,247,238,.65); }
+
+  /* PRODUCTS */
+  .prod-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:22px; }
+  .prod-card{
+    background:var(--paper); border-radius:var(--radius); overflow:hidden;
+    border:1px solid var(--line); transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease;
+    display:flex; flex-direction:column;
+  }
+  .prod-card:hover{ transform:translateY(-8px); box-shadow:0 30px 50px -22px rgba(11,61,46,.35); }
+  .prod-img{ aspect-ratio:1/1; overflow:hidden; }
+  .prod-img img{ width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+  .prod-card:hover .prod-img img{ transform:scale(1.08); }
+  .prod-body{ padding:20px 18px 24px; flex:1; display:flex; flex-direction:column; }
+  .prod-body .tag{ font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:6px;}
+  .prod-body h4{ font-size:17px; margin-bottom:8px; }
+  .prod-body p{ font-size:13px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px; flex:1;}
+  .prod-body a{ font-size:12.5px; font-weight:700; color:var(--forest); display:inline-flex; align-items:center; gap:6px; }
+  .prod-body a .arrow{ transition:transform .3s ease; }
+  .prod-body a:hover .arrow{ transform:translateX(4px); }
+
+  /* WHY CHOOSE */
+  .why-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);}
+  .why-item{ background:var(--cream); padding:38px 32px; }
+  .why-item .ic{
+    width:52px;height:52px; border-radius:14px; margin-bottom:20px;
+    background:linear-gradient(135deg, var(--forest-light), var(--forest-deep));
+    display:flex; align-items:center; justify-content:center; font-size:22px;
+  }
+  .why-item h4{ font-size:16.5px; margin-bottom:10px; }
+  .why-item p{ font-size:13.5px; color:var(--ink-soft); line-height:1.65; }
+
+  /* JOURNEY / SIGNATURE DRIP TIMELINE */
+  .journey{ position:relative; }
+  .drip-track{
+    position:relative; display:flex; justify-content:space-between;
+    margin-top:70px; padding:0 10px;
+  }
+  .drip-track svg.line{ position:absolute; top:26px; left:0; width:100%; height:14px; z-index:0; }
+  .drip-step{ position:relative; z-index:1; text-align:center; flex:1; padding:0 6px; }
+  .drip-node{
+    width:54px; height:54px; border-radius:50%; margin:0 auto 18px;
+    background:radial-gradient(circle at 32% 28%, var(--gold-soft), var(--gold) 65%);
+    border:4px solid var(--forest-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-weight:700; color:var(--forest-deep); font-size:15px;
+    box-shadow:0 8px 20px -6px rgba(201,162,39,.7);
+  }
+  .drip-step span{ font-size:12.5px; color:rgba(251,247,238,.78); font-weight:600; letter-spacing:.02em; display:block; max-width:110px; margin:0 auto;}
+
+  /* QUALITY */
+  .quality-wrap{ display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:center; }
+  .quality-list{ display:flex; flex-direction:column; gap:0; }
+  .quality-list li{
+    list-style:none; display:flex; gap:18px; padding:22px 0; border-bottom:1px solid var(--line);
+  }
+  .quality-list li:first-child{ padding-top:0; }
+  .quality-list b{ font-family:'Fraunces',serif; color:var(--gold); font-size:20px; min-width:34px; }
+  .quality-list h4{ font-size:16px; margin-bottom:6px; }
+  .quality-list p{ font-size:13.5px; color:var(--ink-soft); line-height:1.6; }
+  .quality-media{ position:relative; border-radius:24px; overflow:hidden; border:1px solid var(--line);}
+  .quality-media img{ width:100%; height:100%; object-fit:cover; }
+
+  /* ABOUT */
+  .about-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
+  .about-media{ position:relative; }
+  .about-media img{ border-radius:24px; }
+  .about-badge{
+    position:absolute; bottom:-26px; left:-26px; width:130px; height:130px; border-radius:50%;
+    background:linear-gradient(135deg,var(--gold-soft),var(--gold));
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-family:'Fraunces',serif; color:var(--forest-deep); font-weight:700; font-size:13px; line-height:1.3;
+    box-shadow:0 20px 40px -14px rgba(201,162,39,.6); padding:10px;
+  }
+  .values-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:34px; }
+  .value-box h4{ font-size:15px; margin-bottom:6px; display:flex; align-items:center; gap:8px;}
+  .value-box h4::before{ content:"◆"; color:var(--gold); font-size:10px; }
+  .value-box p{ font-size:13px; color:var(--ink-soft); line-height:1.6; }
+
+  /* TESTIMONIALS */
+  .testi-track{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .testi-card{
+    background:rgba(251,247,238,.05); border:1px solid rgba(232,199,102,.16);
+    border-radius:var(--radius); padding:32px 28px; backdrop-filter:blur(6px);
+  }
+  .testi-card .stars{ color:var(--gold-soft); font-size:14px; margin-bottom:16px; letter-spacing:2px;}
+  .testi-card p{ font-size:14.5px; color:rgba(251,247,238,.82); line-height:1.75; margin-bottom:22px; }
+  .testi-who{ display:flex; align-items:center; gap:12px; }
+  .testi-who .av{ width:38px;height:38px;border-radius:50%; background:linear-gradient(135deg,var(--gold-soft),var(--gold)); }
+  .testi-who b{ display:block; font-size:13.5px; color:var(--cream); }
+  .testi-who span{ font-size:11.5px; color:rgba(251,247,238,.55); }
+
+  /* RECIPES & BLOG */
+  .rb-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .rb-card{ border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--paper); }
+  .rb-media{ aspect-ratio:16/10; background:linear-gradient(135deg,var(--forest-light),var(--forest-deep)); position:relative; display:flex; align-items:flex-end; padding:16px; }
+  .rb-media span{ background:var(--gold); color:var(--forest-deep); font-size:10.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:6px 12px; border-radius:999px; }
+  .rb-body{ padding:22px; }
+  .rb-body h4{ font-size:16px; margin-bottom:10px; line-height:1.35; }
+  .rb-body p{ font-size:13px; color:var(--ink-soft); line-height:1.6; }
+
+  /* DISTRIBUTOR CTA */
+  .cta-band{
+    background:linear-gradient(120deg, var(--forest-deep), var(--forest) 60%, #0d4a37);
+    border-radius:32px; padding:70px 60px; position:relative; overflow:hidden;
+    display:grid; grid-template-columns:1.2fr .8fr; gap:40px; align-items:center;
+  }
+  .cta-band::after{
+    content:""; position:absolute; right:-60px; top:-60px; width:280px; height:280px; border-radius:50%;
+    background:radial-gradient(circle, rgba(201,162,39,.28), transparent 70%);
+  }
+  .cta-band h2{ color:var(--cream); font-size:clamp(26px,3vw,36px); margin-bottom:16px; }
+  .cta-band p{ color:rgba(251,247,238,.7); font-size:15px; line-height:1.7; max-width:460px; }
+  .cta-perks{ display:flex; flex-direction:column; gap:16px; position:relative; z-index:2;}
+  .cta-perks div{ display:flex; align-items:center; gap:12px; color:var(--cream); font-size:13.5px; font-weight:600;}
+  .cta-perks div .chk{ width:24px;height:24px;border-radius:50%; background:var(--gold-soft); color:var(--forest-deep); display:flex; align-items:center; justify-content:center; font-size:12px; flex-shrink:0;}
+
+  /* CONTACT */
+  .contact-wrap{ display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; }
+  .contact-info h2{ font-size:30px; margin-bottom:16px; }
+  .contact-info p{ color:var(--ink-soft); font-size:14.5px; line-height:1.7; margin-bottom:34px; }
+  .cinfo-item{ display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-top:1px solid var(--line); }
+  .cinfo-item .ic{ width:40px;height:40px;border-radius:12px; background:var(--forest-deep); color:var(--gold-soft); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:16px;}
+  .cinfo-item b{ display:block; font-size:13.5px; margin-bottom:2px; }
+  .cinfo-item span{ font-size:13px; color:var(--ink-soft); }
+  .form-card{ background:var(--paper); border:1px solid var(--line); border-radius:24px; padding:40px; }
+  .ic-wa{ width:40px;height:40px;border-radius:50%; background:radial-gradient(circle at 32% 28%, #35e07a, #128C4A 70%); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 8px 18px -5px rgba(18,140,74,.65); }
+  .ic-wa-sm{ width:26px;height:26px;border-radius:50%; background:radial-gradient(circle at 32% 28%, #35e07a, #128C4A 70%); display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 4px 10px -3px rgba(18,140,74,.6); vertical-align:middle; margin-right:8px; }
+  #contact.dark .reveal > p{ color:rgba(251,247,238,.68); }
+  #contact.dark .cinfo-item{ border-top:1px solid rgba(251,247,238,.14); }
+  #contact.dark .cinfo-item b{ color:var(--cream); }
+  #contact.dark .cinfo-item span{ color:rgba(251,247,238,.62); }
+  #contact.dark .cinfo-item .ic{ background:rgba(251,247,238,.08); border:1px solid rgba(232,199,102,.22); color:var(--gold-soft); }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  .form-card label{ font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--forest); display:block; margin-bottom:8px; }
+  .form-card input, .form-card select, .form-card textarea{
+    width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--line); background:var(--cream);
+    font-family:'Manrope'; font-size:14px; color:var(--ink); outline:none; transition:border-color .3s ease;
+  }
+  .form-card input:focus, .form-card select:focus, .form-card textarea:focus{ border-color:var(--gold); }
+  .form-card textarea{ resize:vertical; min-height:100px; }
+  .full-row{ margin-bottom:20px; }
+
+  /* FOOTER */
+  footer{ background:var(--forest-deep); color:rgba(251,247,238,.75); padding:80px 0 0; }
+  .foot-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:40px; padding-bottom:60px; border-bottom:1px solid rgba(251,247,238,.1); }
+  .foot-brand{ display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+  .foot-brand img{ width:40px; height:40px; border-radius:9px; }
+  .foot-brand b{ font-family:'Fraunces',serif; color:var(--cream); font-size:18px; }
+  .foot-col p{ font-size:13.5px; line-height:1.75; color:rgba(251,247,238,.6); margin-bottom:22px; max-width:280px;}
+  .social-row{ display:flex; gap:10px; }
+  .social-row a{ width:36px;height:36px;border-radius:50%; border:1px solid rgba(251,247,238,.2); display:flex; align-items:center; justify-content:center; font-size:14px; transition:all .3s ease;}
+  .social-row a:hover{ background:var(--gold); color:var(--forest-deep); border-color:var(--gold); transform:translateY(-3px);}
+  .foot-col h5{ color:var(--cream); font-family:'Manrope'; font-size:13px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:22px; font-weight:800;}
+  .foot-col ul{ list-style:none; display:flex; flex-direction:column; gap:13px; }
+  .foot-col ul a{ font-size:13.5px; color:rgba(251,247,238,.65); transition:color .25s ease; }
+  .foot-col ul a:hover{ color:var(--gold-soft); }
+  .foot-bottom{ display:flex; justify-content:space-between; align-items:center; padding:26px 0; font-size:12.5px; color:rgba(251,247,238,.45); flex-wrap:wrap; gap:12px;}
+  .foot-bottom a{ color:rgba(251,247,238,.55); }
+  .foot-bottom a:hover{ color:var(--gold-soft); }
+  .foot-links{ display:flex; gap:22px; flex-wrap:wrap; }
+
+  /* WhatsApp floating */
+  .wa-float{
+    position:fixed; bottom:26px; right:26px; z-index:400; width:58px; height:58px; border-radius:50%;
+    background:linear-gradient(135deg,#1fce6b,#0f9e4f); display:flex; align-items:center; justify-content:center;
+    box-shadow:0 14px 30px -8px rgba(15,158,79,.6); font-size:26px; color:#fff;
+    animation:pulse 2.6s infinite;
+  }
+  @keyframes pulse{ 0%{ box-shadow:0 0 0 0 rgba(31,206,107,.5);} 70%{ box-shadow:0 0 0 16px rgba(31,206,107,0);} 100%{ box-shadow:0 0 0 0 rgba(31,206,107,0);} }
+
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (max-width: 980px){
+    .hero-inner{ grid-template-columns:1fr; }
+    .prod-grid{ grid-template-columns:repeat(2,1fr); }
+    .why-grid{ grid-template-columns:1fr; }
+    .quality-wrap, .about-wrap, .contact-wrap{ grid-template-columns:1fr; }
+    .testi-track, .rb-grid{ grid-template-columns:1fr; }
+    .cta-band{ grid-template-columns:1fr; padding:44px 30px; }
+    .foot-grid{ gap:24px; }
+    .foot-col p{ max-width:none; }
+    .nav-links{ display:none; }
+    .menu-btn{ display:block; }
+    .drip-track{ flex-direction:column; gap:28px; align-items:flex-start; }
+    .drip-track svg.line{ display:none; }
+    .drip-step{ display:flex; align-items:center; gap:16px; text-align:left; }
+    .drip-node{ margin:0; flex-shrink:0; }
+  }
+  @media (max-width:620px){
+    .prod-grid{ grid-template-columns:1fr 1fr; }
+    .form-row{ grid-template-columns:1fr; }
+    .foot-grid{ gap:14px 10px; }
+    .foot-brand img{ width:30px; height:30px; }
+    .foot-brand b{ font-size:14px; }
+    .foot-col p{ font-size:11.5px; margin-bottom:14px; }
+    .foot-col h5{ font-size:10px; margin-bottom:14px; letter-spacing:.04em; }
+    .foot-col ul{ gap:9px; }
+    .foot-col ul a{ font-size:11px; line-height:1.35; display:inline-block; }
+    .social-row a{ width:28px; height:28px; font-size:11px; }
+    .ic-wa-sm{ width:18px; height:18px; margin-right:5px; }
+    .ic-wa-sm svg{ width:9px; height:9px; }
+    .foot-bottom{ font-size:10.5px; }
+    .wrap{ padding:0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="drip-progress"><span id="dripFill"></span></div>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <nav>
+      <a href="#home" class="brand">
+        <img src="images/logo.png" alt="Pure Oil & Spice logo">
+        <div class="brand-text">
+          <b>PURE OIL &amp; SPICE</b>
+          <small>From Nature's Heart to Your Kitchen</small>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#quality">Quality</a></li>
+        <li><a href="#recipes">Recipes</a></li>
+        <li><a href="#distributor">Distributor</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#distributor" class="btn btn-gold" style="padding:11px 22px; font-size:13px;">Become a Distributor</a>
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grain"></div>
+  <div class="wrap hero-inner">
+    <div class="reveal in">
+      <span class="eyebrow">Kushtia, Bangladesh · Est. Naturally</span>
+      <h1>From Nature's <em>Heart</em> to Your Kitchen.</h1>
+      <p class="lead">PURE OIL &amp; SPICE crafts hygienic, naturally processed edible oils and spices — hand-selected, lab-tested, and sealed for freshness, so every dish begins with something honest.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-gold">Explore Products</a>
+        <a href="#distributor" class="btn btn-outline">Become a Distributor</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>100%</b><span>Natural Ingredients</span></div>
+        <div><b>0</b><span>Preservatives Added</span></div>
+        <div><b>5+</b><span>Signature Products</span></div>
+      </div>
+    </div>
+    <div class="hero-art reveal in">
+      <div class="float-card c1">
+        <div class="dot">🌿</div>
+        <div><b>Farm Fresh</b><span>Sourced with care</span></div>
+      </div>
+      <div class="glass-frame">
+        <img src="images/hero-banner.png" alt="Pure Oil & Spice product range">
+      </div>
+      <div class="float-card c2">
+        <div class="dot">✓</div>
+        <div><b>Lab Tested</b><span>Every single batch</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section id="products">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our Range</span>
+      <h2>Five staples, one uncompromising standard.</h2>
+      <p>Two cold-pressed oils and three stone-fine spices — everything a kitchen needs to cook the way nature intended, nothing it doesn't.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="images/mustard-oil.png" alt="Pure Mustard Oil 5 Litre"></div>
+        <div class="prod-body">
+          <span class="tag">Edible Oil</span>
+          <h4>Mustard Oil</h4>
+          <p>Naturally extracted, pungent and pure — the everyday oil of the Bengal kitchen.</p>
+          <a href="#">View Product <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="images/soybean-oil.png" alt="Pure Soybean Oil 5 Litre"></div>
+        <div class="prod-body">
+          <span class="tag">Edible Oil</span>
+          <h4>Soybean Oil</h4>
+          <p>Light, neutral and heart-friendly — refined without losing its natural goodness.</p>
+          <a href="#">View Product <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="images/turmeric-powder.png" alt="Pure Turmeric Powder 200g"></div>
+        <div class="prod-body">
+          <span class="tag">Spice</span>
+          <h4>Turmeric Powder</h4>
+          <p>Sun-dried roots, stone-ground fine, for colour and warmth that's honestly earned.</p>
+          <a href="#">View Product <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="images/chili-powder.png" alt="Pure Red Chili Powder 200g"></div>
+        <div class="prod-body">
+          <span class="tag">Spice</span>
+          <h4>Red Chili Powder</h4>
+          <p>Vibrant colour, clean heat — no fillers, no shortcuts, just chilies.</p>
+          <a href="#">View Product <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="prod-card reveal">
+        <div class="prod-img"><img src="images/coriander-powder.png" alt="Pure Coriander Powder 200g"></div>
+        <div class="prod-body">
+          <span class="tag">Spice</span>
+          <h4>Coriander Powder</h4>
+          <p>Fresh, fragrant and finely milled — the quiet backbone of every good curry.</p>
+          <a href="#">View Product <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="dark" style="padding-top:100px;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Pure</span>
+      <h2>Purity isn't a claim here. It's a process.</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-item">
+        <div class="ic">🌾</div>
+        <h4>100% Natural Ingredients</h4>
+        <p>Sourced directly from trusted farms, with nothing artificial added along the way.</p>
+      </div>
+      <div class="why-item">
+        <div class="ic">🏆</div>
+        <h4>Premium Quality</h4>
+        <p>Every batch is benchmarked against a single standard: would we serve this at our own table?</p>
+      </div>
+      <div class="why-item">
+        <div class="ic">🧼</div>
+        <h4>Hygienically Processed</h4>
+        <p>Modern, sanitised facilities keep every stage of production clean and controlled.</p>
+      </div>
+      <div class="why-item">
+        <div class="ic">🚜</div>
+        <h4>Farm Fresh Raw Materials</h4>
+        <p>We work close to the source, cutting the distance between harvest and processing.</p>
+      </div>
+      <div class="why-item">
+        <div class="ic">📦</div>
+        <h4>Advanced Packaging</h4>
+        <p>Sealed pouches and bottles that lock in aroma and keep contamination out.</p>
+      </div>
+      <div class="why-item">
+        <div class="ic">💧</div>
+        <h4>Freshness Guaranteed</h4>
+        <p>From extraction to your shelf, we protect the freshness nature gave it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FARM TO KITCHEN JOURNEY - signature drip timeline -->
+<section class="dark journey">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow">The Journey</span>
+      <h2>Farm to Kitchen, Traced Every Step.</h2>
+      <p>A single drop follows this exact path before it ever reaches your pan.</p>
+    </div>
+    <div class="drip-track reveal">
+      <svg class="line" viewBox="0 0 1000 20" preserveAspectRatio="none">
+        <path d="M0,10 Q125,-5 250,10 T500,10 T750,10 T1000,10" stroke="url(#g)" stroke-width="2.5" fill="none" stroke-dasharray="1 9" stroke-linecap="round"/>
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#E8C766"/><stop offset="100%" stop-color="#C9A227"/>
+        </linearGradient></defs>
+      </svg>
+      <div class="drip-step"><div class="drip-node">01</div><span>Farm &amp; Raw Material Collection</span></div>
+      <div class="drip-step"><div class="drip-node">02</div><span>Cleaning</span></div>
+      <div class="drip-step"><div class="drip-node">03</div><span>Processing &amp; Extraction</span></div>
+      <div class="drip-step"><div class="drip-node">04</div><span>Quality Inspection</span></div>
+      <div class="drip-step"><div class="drip-node">05</div><span>Packaging</span></div>
+      <div class="drip-step"><div class="drip-node">06</div><span>Distribution</span></div>
+      <div class="drip-step"><div class="drip-node">07</div><span>Your Kitchen</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-wrap">
+    <div class="about-media reveal">
+      <img src="images/mustard-oil.png" alt="Pure Mustard Oil bottle in a mustard field">
+      <div class="about-badge">Rooted in<br>Kushtia,<br>Bangladesh</div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Our Story</span>
+      <h2 style="font-size:34px; margin-bottom:18px;">Built on one promise: nothing hidden in the bottle.</h2>
+      <p style="color:var(--ink-soft); font-size:15px; line-height:1.8;">PURE OIL &amp; SPICE began in Kushtia with a simple frustration — that "pure" had become a marketing word rather than a fact on the label. We set out to build a food brand where every claim could survive a lab test, and every ingredient could be traced back to a farm. Today that same discipline shapes our mustard oil, soybean oil, and stone-ground spices, made for households, distributors, and export partners who expect the same thing we do: honesty in every drop.</p>
+      <div class="values-grid">
+        <div class="value-box"><h4>Our Mission</h4><p>Deliver safe, naturally processed food to every kitchen we reach.</p></div>
+        <div class="value-box"><h4>Our Vision</h4><p>Become Bangladesh's most trusted name in pure edible oils and spices.</p></div>
+        <div class="value-box"><h4>Core Values</h4><p>Purity, transparency, and respect for the farmers who feed our supply chain.</p></div>
+        <div class="value-box"><h4>Sustainability</h4><p>Eco-conscious packaging and long-term partnerships with local growers.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALITY -->
+<section id="quality" style="background:linear-gradient(120deg, rgba(224,138,30,.10), rgba(110,127,61,.08) 45%, rgba(201,162,39,.12));">
+  <div class="wrap quality-wrap">
+    <div class="reveal">
+      <span class="eyebrow">Quality &amp; Food Safety</span>
+      <h2 style="font-size:32px; margin-bottom:26px;">Four checkpoints. Zero shortcuts.</h2>
+      <ul class="quality-list">
+        <li><b>01</b><div><h4>Raw Material Selection</h4><p>Every batch begins with a careful audit of the source — no compromises on the seed or the soil.</p></div></li>
+        <li><b>02</b><div><h4>Laboratory Testing</h4><p>Independent lab checks confirm purity before a single unit is packed.</p></div></li>
+        <li><b>03</b><div><h4>Modern Machinery &amp; Hygiene</h4><p>Sanitised, food-grade processing lines built around strict hygiene protocols.</p></div></li>
+        <li><b>04</b><div><h4>Batch Traceability</h4><p>Every pack can be traced back to its production batch — full transparency, on request.</p></div></li>
+      </ul>
+    </div>
+    <div class="quality-media reveal">
+      <img src="images/hero-banner.png" alt="Quality tested product range">
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="dark">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow">Customer Voices</span>
+      <h2>Kitchens that trust Pure.</h2>
+    </div>
+    <div class="testi-track reveal">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"The mustard oil has that real, sharp aroma my grandmother's used to have. Nothing artificial about it."</p>
+        <div class="testi-who"><div class="av"></div><div><b>Rehana Akter</b><span>Home Cook, Dhaka</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"We switched our restaurant's spice supply to Pure six months ago — the colour and flavour consistency is unmatched."</p>
+        <div class="testi-who"><div class="av"></div><div><b>Kamal Hossain</b><span>Restaurant Owner, Khulna</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"As a distributor, the batch traceability and packaging quality make Pure an easy brand to stand behind."</p>
+        <div class="testi-who"><div class="av"></div><div><b>Farzana Yasmin</b><span>Regional Distributor</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECIPES & BLOG -->
+<section id="recipes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Recipes &amp; Reading</span>
+      <h2>Cooked with Pure, written for you.</h2>
+      <p>Bengali classics, healthy weekday meals, and the nutrition science behind every spice jar.</p>
+    </div>
+    <div class="rb-grid">
+      <div class="rb-card reveal">
+        <div class="rb-media" style="background-image:linear-gradient(135deg,#14543F,#052821);"><span>Recipe</span></div>
+        <div class="rb-body"><h4>Traditional Shorshe Ilish with Pure Mustard Oil</h4><p>The classic Bengali hilsa curry, built on the sharp bite of pure cold-pressed mustard oil.</p></div>
+      </div>
+      <div class="rb-card reveal">
+        <div class="rb-media" style="background-image:linear-gradient(135deg,#C9A227,#8a6e17);"><span>Health</span></div>
+        <div class="rb-body"><h4>5 Everyday Benefits of Turmeric</h4><p>What the curcumin in your morning cup is actually doing for your body.</p></div>
+      </div>
+      <div class="rb-card reveal">
+        <div class="rb-media" style="background-image:linear-gradient(135deg,#14543F,#052821);"><span>Cooking Tips</span></div>
+        <div class="rb-body"><h4>Storing Spices to Keep Them Fresher, Longer</h4><p>Simple habits that protect flavour and colour long after the pack is opened.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISTRIBUTOR + EXPORT CTA -->
+<section id="distributor" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--gold-soft);">Partner With Us</span>
+        <h2>Become a Pure distributor — or take us global.</h2>
+        <p>We're expanding across Bangladesh and into export markets, with wholesale pricing, OEM manufacturing, and private-label options for serious partners.</p>
+        <div style="display:flex; gap:16px; margin-top:30px; flex-wrap:wrap;">
+          <a href="#contact" class="btn btn-gold">Apply as Distributor</a>
+          <a href="#contact" class="btn btn-outline">Export Inquiry</a>
+        </div>
+      </div>
+      <div class="cta-perks">
+        <div><span class="chk">✓</span> Attractive wholesale margins</div>
+        <div><span class="chk">✓</span> Dedicated area availability</div>
+        <div><span class="chk">✓</span> OEM &amp; private label options</div>
+        <div><span class="chk">✓</span> Bulk order &amp; export shipping support</div>
+        <div><span class="chk">✓</span> Marketing &amp; packaging assets provided</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="dark">
+  <div class="wrap contact-wrap">
+    <div class="reveal">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Let's talk purity, in person.</h2>
+      <p>Questions about a product, a bulk order, or becoming a distributor — our team responds within one business day.</p>
+      <div class="cinfo-item"><div class="ic">📍</div><div><b>Head Office</b><span>Kushtia, Bangladesh</span></div></div>
+      <div class="cinfo-item"><div class="ic">✉️</div><div><b>Email</b><span>info@exariste.com</span></div></div>
+      <div class="cinfo-item"><div class="ic">📞</div><div><b>Phone</b><span>+880 1713-366224</span></div></div>
+      <div class="cinfo-item"><div class="ic-wa">
+        <svg viewBox="0 0 32 32" width="20" height="20" fill="#fff"><path d="M16.02 4C9.4 4 4.03 9.37 4.03 16c0 2.12.56 4.16 1.62 5.97L4 28l6.2-1.63A11.9 11.9 0 0 0 16.02 28C22.63 28 28 22.63 28 16S22.63 4 16.02 4zm0 21.7c-1.88 0-3.7-.5-5.3-1.46l-.38-.22-3.68.97.98-3.58-.25-.37a9.7 9.7 0 0 1-1.5-5.04c0-5.36 4.36-9.72 9.73-9.72 5.36 0 9.72 4.36 9.72 9.72 0 5.37-4.36 9.7-9.72 9.7zm5.32-7.28c-.29-.15-1.73-.86-2-.95-.27-.1-.46-.15-.66.14-.2.29-.75.95-.92 1.15-.17.19-.34.22-.63.07-.29-.14-1.22-.45-2.32-1.43-.86-.76-1.44-1.7-1.6-1.99-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.07-.15-.66-1.6-.91-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.51.07-.78.36-.27.29-1.02 1-1.02 2.42 0 1.43 1.05 2.82 1.19 3.01.15.19 2.06 3.15 5 4.42.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.73-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.12-.26-.2-.55-.34z"/></svg>
+      </div><div><b>WhatsApp</b><span>+880 1713-366224</span></div></div>
+    </div>
+    <div class="form-card reveal">
+      <div class="form-row">
+        <div><label>Full Name</label><input type="text" placeholder="Your name"></div>
+        <div><label>Phone Number</label><input type="tel" placeholder="+880"></div>
+      </div>
+      <div class="form-row">
+        <div><label>Email</label><input type="email" placeholder="you@email.com"></div>
+        <div><label>I'm Interested In</label>
+          <select>
+            <option>General Inquiry</option>
+            <option>Become a Distributor</option>
+            <option>Export / Bulk Order</option>
+            <option>OEM / Private Label</option>
+          </select>
+        </div>
+      </div>
+      <div class="full-row"><label>Message</label><textarea placeholder="Tell us a little about what you need..."></textarea></div>
+      <button type="button" class="btn btn-gold" style="width:100%; justify-content:center;">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand"><img src="images/logo.png" alt="Pure Oil & Spice logo"><b>PURE OIL &amp; SPICE</b></div>
+        <p>Delivering pure edible oils and premium spices from trusted sources, ensuring freshness, safety, and authentic taste in every kitchen.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="X">𝕏</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Our Products</h5>
+        <ul>
+          <li><a href="#products">Mustard Oil</a></li>
+          <li><a href="#products">Soybean Oil</a></li>
+          <li><a href="#products">Turmeric Powder</a></li>
+          <li><a href="#products">Red Chili Powder</a></li>
+          <li><a href="#products">Coriander Powder</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#quality">Quality &amp; Safety</a></li>
+          <li><a href="#recipes">Recipes</a></li>
+          <li><a href="#distributor">Become a Distributor</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">📍 Kushtia, Bangladesh</a></li>
+          <li><a href="mailto:info@exariste.com">✉️ info@exariste.com</a></li>
+          <li><a href="tel:+8801713366224">📞 +880 1713-366224</a></li>
+          <li><a href="https://wa.me/8801713366224" target="_blank" style="display:flex; align-items:center;"><span class="ic-wa-sm"><svg viewBox="0 0 32 32" width="13" height="13" fill="#fff"><path d="M16.02 4C9.4 4 4.03 9.37 4.03 16c0 2.12.56 4.16 1.62 5.97L4 28l6.2-1.63A11.9 11.9 0 0 0 16.02 28C22.63 28 28 22.63 28 16S22.63 4 16.02 4zm0 21.7c-1.88 0-3.7-.5-5.3-1.46l-.38-.22-3.68.97.98-3.58-.25-.37a9.7 9.7 0 0 1-1.5-5.04c0-5.36 4.36-9.72 9.73-9.72 5.36 0 9.72 4.36 9.72 9.72 0 5.37-4.36 9.7-9.72 9.7zm5.32-7.28c-.29-.15-1.73-.86-2-.95-.27-.1-.46-.15-.66.14-.2.29-.75.95-.92 1.15-.17.19-.34.22-.63.07-.29-.14-1.22-.45-2.32-1.43-.86-.76-1.44-1.7-1.6-1.99-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.07-.15-.66-1.6-.91-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.51.07-.78.36-.27.29-1.02 1-1.02 2.42 0 1.43 1.05 2.82 1.19 3.01.15.19 2.06 3.15 5 4.42.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.73-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.12-.26-.2-.55-.34z"/></svg></span>+880 1713-366224</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 PURE OIL &amp; SPICE. All Rights Reserved.</span>
+      <div class="foot-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Developed by ZENIXA DIGITAL LAB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8801713366224" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+  // header scroll state
+  const header = document.getElementById('siteHeader');
+  const dripFill = document.getElementById('dripFill');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    dripFill.style.height = pct + '%';
+  });
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // mobile menu (simple toggle of nav-links)
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.querySelector('.nav-links');
+  menuBtn.addEventListener('click', () => {
+    const open = navLinks.style.display === 'flex';
+    navLinks.style.display = open ? 'none' : 'flex';
+    navLinks.style.cssText += 'position:fixed; top:70px; left:20px; right:20px; background:rgba(5,40,33,.96); backdrop-filter:blur(20px); flex-direction:column; padding:24px; border-radius:16px; gap:20px; z-index:600;';
+  });
+</script>
+
+</body>
+</html>
