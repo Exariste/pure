@@ -314,6 +314,23 @@
   #contact.dark .cinfo-item b{ color:var(--cream); }
   #contact.dark .cinfo-item span{ color:rgba(251,247,238,.62); }
   #contact.dark .cinfo-item .ic{ background:rgba(251,247,238,.08); border:1px solid rgba(232,199,102,.22); color:var(--gold-soft); }
+  #contact.dark .form-card{
+    background:linear-gradient(160deg, rgba(251,247,238,.07), rgba(251,247,238,.02));
+    border:1px solid rgba(232,199,102,.22);
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.5);
+  }
+  #contact.dark .form-card label{ color:var(--gold-soft); }
+  #contact.dark .form-card input,
+  #contact.dark .form-card select,
+  #contact.dark .form-card textarea{
+    background:rgba(5,40,33,.45); border:1px solid rgba(251,247,238,.16); color:var(--cream);
+  }
+  #contact.dark .form-card input::placeholder,
+  #contact.dark .form-card textarea::placeholder{ color:rgba(251,247,238,.4); }
+  #contact.dark .form-card select option{ background:var(--forest-deep); color:var(--cream); }
+  #contact.dark .form-card input:focus,
+  #contact.dark .form-card select:focus,
+  #contact.dark .form-card textarea:focus{ border-color:var(--gold-soft); }
   .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
   .form-card label{ font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--forest); display:block; margin-bottom:8px; }
   .form-card input, .form-card select, .form-card textarea{
